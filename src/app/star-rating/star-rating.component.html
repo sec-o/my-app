@@ -1,0 +1,20 @@
+<!-- star-rating edit activated in product review -->
+<div class="star-rating cursor" *ngIf="activateEditStarRating">
+  <span
+    *ngFor="let star of stars; let i = index"
+    (click)="rateArticle(i + 1)"
+    [ngClass]="{ filled: i < selectedStar }"
+  >
+    &#9733;
+  </span>
+</div>
+
+<!-- star-rating only showed and not editable in product listing -->
+<div class="star-rating" *ngIf="!activateEditStarRating">
+  <span
+    *ngFor="let star of stars; let i = index"
+    [ngClass]="{ filled: i < selectedStar }"
+  >
+    &#9733;
+  </span>
+</div>

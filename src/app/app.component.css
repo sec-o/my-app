@@ -1,0 +1,38 @@
+.toolbar {
+  background-color: purple;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+
+  /* center text horizontally and vertically */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 750px;
+}
+
+a {
+  color: white;
+  padding: 25px 25px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: black;
+}
+
+.toolbar-btn {
+  background-color: purple;
+}
+
+.toolbar-btn-active {
+  background-color: black;
+}
+
+.main {
+  margin-top: 85px;
+  text-align: center;
+}

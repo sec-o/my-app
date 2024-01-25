@@ -1,0 +1,125 @@
+.search-field-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+}
+
+.search-field {
+  width: 500px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-list-container {
+  margin: 0 auto; /* Center the container */
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to a new line */
+  justify-content: space-between; /* Adjust as needed, e.g., space-between, space-evenly */
+}
+
+.card {
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Add this line to make cards inline-block */
+  width: 300px; /* Adjust the width as needed */
+  height: 375px;
+}
+
+.card-header {
+  background-color: purple;
+  color: white;
+  height: 35px;
+  text-align: center;
+  font-size: 20px;
+  /* set text centered vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body-image-placeholder {
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.card-body-text {
+  padding: 10px;
+}
+
+.card-body-price {
+  text-align: right;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.icon-size {
+  font-size: 100px;
+  height: 100px;
+  width: 100px;
+}
+
+.error-container {
+  background-color: #ff6666;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.product-list-container {
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+.product-list-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.product-container {
+  display: flex;
+}
+
+.product-image-placeholder {
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.product-header {
+  background-color: purple;
+  color: white;
+  height: 35px;
+  font-size: 20px;
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  /* set text centered vertically */
+  display: flex;
+  align-items: center;
+}
+
+.product-description {
+  margin-bottom: 10px;
+}
+
+.product-body-price {
+  font-weight: bold;
+  font-size: x-large;
+}

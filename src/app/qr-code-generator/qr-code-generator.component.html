@@ -1,0 +1,16 @@
+<div class="qrcode-container">
+  <div class="banner-container">QR-Code Generator</div>
+  <div #qrcode style="padding-bottom: 20px"></div>
+  <label for="qrData">QR Code Data:</label>
+  <input id="qrData" [(ngModel)]="qrData" placeholder="Enter data" />
+  <div class="input-container">
+    <button (click)="generateQRCode()">Generate QR Code</button>
+    <button
+      class="reset-button"
+      [disabled]="qrData === 'https://example.com'"
+      (click)="reset()"
+    >
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+  </div>
+</div>
