@@ -8,11 +8,11 @@ import { MockDataService } from '../mock-data.service';
 })
 export class ProductFinderAppComponent {
   products: any;
-  customerProductSearch = '';
+  customerProductSearchInput = '';
   searchingForProduct = false;
   foundProducts: any = [];
-  doesSearchMatchWithProduct = false;
   showErrorScreen = false;
+  isCardView = true;
 
   constructor(private mockDataService: MockDataService) {
     this.mockDataService.getProducts().subscribe((allProducts) => {
@@ -21,37 +21,49 @@ export class ProductFinderAppComponent {
   }
 
   searchProduct() {
+    this.foundProducts = [];
     this.showErrorScreen = false;
-
     this.searchingForProduct = true;
 
+    // Split the customer product search input into individual words
+    const searchQuery = this.customerProductSearchInput
+      .toLowerCase()
+      .split(' ');
+
+    // Check if any of the individual words match with a product
     for (const product of this.products) {
       if (
-        this.customerProductSearch.toLowerCase() === product.name.toLowerCase()
+        product.name
+          .toLowerCase()
+          .split(' ')
+          .some((word: string) => searchQuery.includes(word))
       ) {
-        this.doesSearchMatchWithProduct = true;
         this.foundProducts.push(product);
       }
     }
-    if (this.doesSearchMatchWithProduct === false) this.showErrorScreen = true;
+    if (this.foundProducts.length === 0) this.showErrorScreen = true;
   }
 
   resetProductSearch() {
-    this.customerProductSearch = '';
+    this.customerProductSearchInput = '';
     this.searchingForProduct = false;
     this.foundProducts = [];
-    this.doesSearchMatchWithProduct = false;
     this.showErrorScreen = false;
   }
 
   clearField() {
-    if (!this.customerProductSearch) {
+    if (!this.customerProductSearchInput) {
       this.resetProductSearch();
     }
   }
 
+  // Toggle product view between cards and list
+  toggleView() {
+    this.isCardView = !this.isCardView;
+  }
+
   onRatingClicked(rating: number): void {
-    // Handle the rating clicked event, e.g., save the rating to the backend.
+    // TODO: Handle the rating clicked event (save the rating to the backend when making a product review)
     console.log(`User rated the article with ${rating} stars.`);
   }
 }

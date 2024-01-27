@@ -1,17 +1,17 @@
-<!-- search field -->
+<!-- Search field -->
 <div class="search-field-container">
   <mat-form-field class="search-field">
     <mat-label>Search for your product...</mat-label>
     <input
       matInput
       placeholder="Ex. iPhone"
-      [(ngModel)]="customerProductSearch"
+      [(ngModel)]="customerProductSearchInput"
       (ngModelChange)="clearField()"
       (keyup.enter)="searchProduct()"
     />
 
     <button
-      *ngIf="customerProductSearch"
+      *ngIf="customerProductSearchInput"
       mat-icon-button
       matSuffix
       (click)="resetProductSearch()"
@@ -19,7 +19,7 @@
       <mat-icon>close</mat-icon>
     </button>
     <button
-      *ngIf="customerProductSearch"
+      *ngIf="customerProductSearchInput"
       mat-icon-button
       matSuffix
       (click)="searchProduct()"
@@ -29,76 +29,107 @@
   </mat-form-field>
 </div>
 
+<!-- TODO: just for testing, remove at the end -->
 <div class="search-field-container">
-  Input-Value: {{ customerProductSearch }}
+  Input-Value: {{ customerProductSearchInput }}
 </div>
 
-<!-- product container -->
-<!-- show all products -->
-<div
-  class="card-list-container"
-  *ngIf="showErrorScreen === false && searchingForProduct === false"
->
-  <div class="card" *ngFor="let product of products">
-    <div class="card-header">
-      {{ product.name }}
+<!-- Toggle view button between cards and list -->
+<div class="toggle-button-container">
+  <button class="toggle-button">
+    <mat-icon fontIcon="grid_view" (click)="toggleView()"></mat-icon>
+  </button>
+</div>
+
+<!-- Product cards view container -->
+<div *ngIf="isCardView; else listView">
+  <div class="card-list-container">
+    <!-- Show all products -->
+    <div *ngIf="showErrorScreen === false && searchingForProduct === false">
+      <div class="card" *ngFor="let product of products">
+        <div class="card-header">
+          {{ product.name }}
+        </div>
+        <div class="card-body-image-placeholder">
+          <mat-icon class="icon-size">image</mat-icon>
+        </div>
+        <div class="card-body-text">
+          <app-star-rating
+            [selectedStar]="product.rating"
+            (ratingClicked)="onRatingClicked($event)"
+          ></app-star-rating>
+          {{ product.description }}
+        </div>
+        <div class="card-body-price">
+          {{ product.price + "$" }}
+        </div>
+      </div>
     </div>
-    <div class="card-body-image-placeholder">
-      <mat-icon class="icon-size">image</mat-icon>
-    </div>
-    <div class="card-body-text">
-      {{ product.description }}
-    </div>
-    <div class="card-body-price">
-      {{ product.price + "$" }}
+    <!-- Show only the products that match the search -->
+    <div *ngIf="showErrorScreen === false && searchingForProduct === true">
+      <div class="card" *ngFor="let product of foundProducts">
+        <div class="card-header">
+          {{ product.name }}
+        </div>
+        <div class="card-body-image-placeholder">
+          <mat-icon class="icon-size">image</mat-icon>
+        </div>
+        <div class="card-body-text">
+          {{ product.description }}
+        </div>
+        <div class="card-body-price">
+          {{ product.price + "$" }}
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- show only the products that match the search -->
-<div *ngIf="foundProducts.length > 0">
-  <div
-    class="card-list-container"
-    *ngIf="showErrorScreen === false && searchingForProduct === true"
-  >
-    <div class="card" *ngFor="let product of foundProducts">
-      <div class="card-header">
-        {{ product.name }}
+<!-- Products list view container -->
+<ng-template #listView>
+  <div class="product-list-container">
+    <!-- Show all products -->
+    <div *ngIf="showErrorScreen === false && searchingForProduct === false">
+      <div class="product-list-item" *ngFor="let product of products">
+        <div class="product-container">
+          <div class="product-image-placeholder">
+            <mat-icon class="icon-size">image</mat-icon>
+          </div>
+          <div>
+            <div class="product-header">{{ product.name }}</div>
+            <app-star-rating
+              [selectedStar]="product.rating"
+              (ratingClicked)="onRatingClicked($event)"
+            ></app-star-rating>
+            <div class="product-description">{{ product.description }}</div>
+            <div class="product-body-price">{{ product.price + "$" }}</div>
+          </div>
+        </div>
       </div>
-      <div class="card-body-image-placeholder">
-        <mat-icon class="icon-size">image</mat-icon>
-      </div>
-      <div class="card-body-text">
-        {{ product.description }}
-      </div>
-      <div class="card-body-price">
-        {{ product.price + "$" }}
+    </div>
+    <!-- Show only the products that match the search -->
+    <div *ngIf="showErrorScreen === false && searchingForProduct === true">
+      <div class="product-list-item" *ngFor="let product of foundProducts">
+        <div class="product-container">
+          <div class="product-image-placeholder">
+            <mat-icon class="icon-size">image</mat-icon>
+          </div>
+          <div>
+            <div class="product-header">{{ product.name }}</div>
+            <app-star-rating
+              [selectedStar]="product.rating"
+              (ratingClicked)="onRatingClicked($event)"
+            ></app-star-rating>
+            <div class="product-description">{{ product.description }}</div>
+            <div class="product-body-price">{{ product.price + "$" }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
 
-<!-- error message if no product matches the search -->
+<!-- Error message if no product matches the search -->
 <div class="error-container center" *ngIf="showErrorScreen === true">
   Sorry, but we don't offer this product.
-</div>
-
-<!-- product list horizontal -->
-<div class="product-list-container">
-  <div class="product-list-item" *ngFor="let product of products">
-    <div class="product-container">
-      <div class="product-image-placeholder">
-        <mat-icon class="icon-size">image</mat-icon>
-      </div>
-      <div>
-        <div class="product-header">{{ product.name }}</div>
-        <app-star-rating
-          [selectedStar]="product.rating"
-          (ratingClicked)="onRatingClicked($event)"
-        ></app-star-rating>
-        <div class="product-description">{{ product.description }}</div>
-        <div class="product-body-price">{{ product.price + "$" }}</div>
-      </div>
-    </div>
-  </div>
 </div>

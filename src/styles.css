@@ -3,6 +3,7 @@
 body {
   max-width: 1000px;
   margin: 0 auto; /* Center the content horizontally */
+  overflow-y: scroll; /* Force scrollbar always so it doesn't affect the width layout of the website when switching between sites with and without scrollbar */
 }
 
 .mat-icon {
