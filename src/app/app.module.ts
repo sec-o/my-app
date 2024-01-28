@@ -16,6 +16,7 @@ import { ChatbotAppComponent } from './chatbot-app/chatbot-app.component';
 import { ChatbotMessageComponent } from './chatbot-message/chatbot-message.component';
 import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     ChatbotMessageComponent,
     QrCodeGeneratorComponent,
     StarRatingComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
