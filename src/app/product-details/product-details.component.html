@@ -1,0 +1,29 @@
+<div class="product-container">
+  <div class="product-details-item">
+    <div class="product-details-container">
+      <div style="display: flex">
+        <div class="product-details-image-placeholder">
+          <mat-icon class="icon-size">image</mat-icon>
+        </div>
+        <div>
+          <div class="product-header">product.name</div>
+          <div style="display: flex">
+            <app-star-rating [selectedStar]="5"></app-star-rating>
+            <div style="font-weight: bold; margin-left: 10px">5841 Reviews</div>
+          </div>
+          <div class="product-price">product.price</div>
+          <div class="product-full-description">product.fullDescription</div>
+        </div>
+      </div>
+      <div class="cart-control">
+        <div>
+          <div class="product-condition">product.condition</div>
+          <div class="product-price">product.price</div>
+          <div class="in-stock">product.inStock</div>
+          <div class="delivery-time">product.deliveryTime</div>
+        </div>
+        <button mat-raised-button color="primary">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
