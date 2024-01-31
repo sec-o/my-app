@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'product-finder-app', component: ProductFinderAppComponent },
+  { path: 'product/:id/:name', component: ProductDetailsComponent },
+  // If you set : beforehand, it will be declared as a parameter to the router so that you can get the dynamic information after routing to it
   { path: 'chatbot-app', component: ChatbotAppComponent },
   { path: 'qr-code-generator-app', component: QrCodeGeneratorComponent },
   { path: 'product-details', component: ProductDetailsComponent },

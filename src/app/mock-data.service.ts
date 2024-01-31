@@ -7,12 +7,13 @@ import { Product } from '../app/models/product.model';
 })
 
 // NOTE
-// this data-service mocks a real server with data to work with.
-// later you should configure a real one if you want to connect with a database from the web.
+// This data-service mocks a real server with data to work with.
+// Later you should configure a real one which connects to a database from the web.
 //
 export class MockDataService {
   private products: Product[] = [
     {
+      id: 1000,
       name: 'Apple iPhone 18',
       rating: 5,
       description: 'Put your product description here. This is just a sample.',
@@ -24,6 +25,7 @@ export class MockDataService {
       deliveryTime: 1,
     },
     {
+      id: 1001,
       name: 'Samsung Galaxy S35',
       rating: 4,
       description: 'Put your product description here. This is just a sample.',
@@ -35,6 +37,7 @@ export class MockDataService {
       deliveryTime: 1,
     },
     {
+      id: 1002,
       name: 'Sony Xperia 9',
       rating: 3.5,
       description: 'Put your product description here. This is just a sample.',
@@ -46,6 +49,7 @@ export class MockDataService {
       deliveryTime: 3,
     },
     {
+      id: 1003,
       name: 'LG G 16',
       rating: 3,
       description: 'Put your product description here. This is just a sample.',
@@ -53,10 +57,11 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 500,
       condition: 'new',
-      inStock: true,
+      inStock: false,
       deliveryTime: 3,
     },
     {
+      id: 1004,
       name: 'Nokia 14',
       rating: 3,
       description: 'Put your product description here. This is just a sample.',
@@ -64,10 +69,11 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 300,
       condition: 'new',
-      inStock: true,
+      inStock: false,
       deliveryTime: 2,
     },
     {
+      id: 1005,
       name: 'Motorola Razr',
       rating: 4,
       description: 'Put your product description here. This is just a sample.',
@@ -83,5 +89,10 @@ export class MockDataService {
 
   getProducts(): Observable<Product[]> {
     return of(this.products);
+  }
+
+  getProductById(id: number): Observable<any> {
+    const product = this.products.find((p) => p.id === id);
+    return of(product);
   }
 }
