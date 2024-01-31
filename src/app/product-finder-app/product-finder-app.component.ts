@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MockDataService } from '../mock-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'product-finder-app',
@@ -14,7 +15,10 @@ export class ProductFinderAppComponent {
   showErrorScreen = false;
   isCardView = true;
 
-  constructor(private mockDataService: MockDataService) {
+  constructor(
+    private mockDataService: MockDataService,
+    private router: Router
+  ) {
     this.mockDataService.getProducts().subscribe((allProducts) => {
       this.products = allProducts;
     });
@@ -65,5 +69,22 @@ export class ProductFinderAppComponent {
   onRatingClicked(rating: number): void {
     // TODO: Handle the rating clicked event (save the rating to the backend when making a product review)
     console.log(`User rated the article with ${rating} stars.`);
+  }
+
+  // Link the product to its product details page
+  onProductClick(productId: number): void {
+    this.router.navigate([
+      '/product',
+      productId,
+      this.getProductName(productId),
+    ]);
+  }
+
+  // Implement logic to get the product name based on productId
+  private getProductName(productId: number): string {
+    const product = this.products.find(
+      (p: { id: number }) => p.id === productId
+    );
+    return product.name.replace(/ /g, '_'); // Replace space with underscore
   }
 }

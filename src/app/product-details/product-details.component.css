@@ -51,32 +51,52 @@
 .product-price {
   font-weight: bold;
   font-size: x-large;
-  margin-top: 10px;
 }
 
 .product-full-description {
   margin-top: 20px;
 }
 
-.product-price {
-  font-weight: bold;
-  font-size: x-large;
-  margin-bottom: 10px;
-}
-
 .cart-control {
-  width: 120px;
+  width: 250px;
   border-left: 1px solid #ddd;
-  padding-left: 40px;
-  padding-right: 40px;
+  margin-left: 40px;
+  padding-left: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.in-stock {
-  margin-bottom: 10px;
+.product-condition-badge {
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: green;
+  color: #fff;
+  font-size: 8px;
+  border-radius: 5px;
+  padding: 0px 8px;
+  margin-bottom: 5px;
+}
+
+.in-stock-badge {
+  display: inline-block;
+  color: green;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.out-of-stock-badge {
+  display: inline-block;
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .delivery-time {
+  font-size: 10px;
+}
+
+button {
+  width: 120px;
+  font-size: 12px;
 }

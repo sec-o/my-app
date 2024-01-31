@@ -46,7 +46,11 @@
   <div class="card-list-container">
     <!-- Show all products -->
     <div *ngIf="showErrorScreen === false && searchingForProduct === false">
-      <div class="card" *ngFor="let product of products">
+      <div
+        class="card"
+        *ngFor="let product of products"
+        (click)="onProductClick(product.id)"
+      >
         <div class="card-header">
           {{ product.name }}
         </div>

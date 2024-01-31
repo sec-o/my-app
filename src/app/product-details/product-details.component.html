@@ -1,28 +1,52 @@
-<div class="product-container">
-  <div class="product-details-item">
-    <div class="product-details-container">
-      <div style="display: flex">
-        <div class="product-details-image-placeholder">
-          <mat-icon class="icon-size">image</mat-icon>
-        </div>
-        <div>
-          <div class="product-header">product.name</div>
-          <div style="display: flex">
-            <app-star-rating [selectedStar]="5"></app-star-rating>
-            <div style="font-weight: bold; margin-left: 10px">5841 Reviews</div>
+<div *ngIf="product">
+  <div class="product-container">
+    <div class="product-details-item">
+      <div class="product-details-container">
+        <div style="display: flex">
+          <div>
+            <div class="product-details-image-placeholder">
+              <mat-icon class="icon-size">image</mat-icon>
+            </div>
           </div>
-          <div class="product-price">product.price</div>
-          <div class="product-full-description">product.fullDescription</div>
+          <div>
+            <div class="product-header">{{ product.name }}</div>
+            <div style="display: flex">
+              <app-star-rating
+                [selectedStar]="product.rating"
+              ></app-star-rating>
+              <div style="font-weight: bold; margin-left: 10px">
+                5841 Reviews
+              </div>
+            </div>
+            <div class="product-full-description">
+              {{ product.fullDescription }}
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="cart-control">
-        <div>
-          <div class="product-condition">product.condition</div>
-          <div class="product-price">product.price</div>
-          <div class="in-stock">product.inStock</div>
-          <div class="delivery-time">product.deliveryTime</div>
+        <div class="cart-control">
+          <div>
+            <div class="product-condition-badge">{{ product.condition }}</div>
+            <div class="product-price">{{ product.price + "$" }}</div>
+            <div *ngIf="product.inStock; else outOfStock">
+              <div class="in-stock-badge">This product is in stock.</div>
+            </div>
+            <div class="delivery-time" *ngIf="product.inStock">
+              Delivery within {{ product.deliveryTime }} day(s).
+            </div>
+            <ng-template #outOfStock
+              ><div class="out-of-stock-badge">
+                We're sorry, but this product is out of stock.
+              </div></ng-template
+            >
+          </div>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!product.inStock"
+          >
+            Add to Cart
+          </button>
         </div>
-        <button mat-raised-button color="primary">Add to Cart</button>
       </div>
     </div>
   </div>

@@ -23,6 +23,7 @@
   display: inline-block; /* Add this line to make cards inline-block */
   width: 300px; /* Adjust the width as needed */
   height: 375px;
+  cursor: pointer;
 }
 
 .card-header {
