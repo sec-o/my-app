@@ -14,7 +14,7 @@
   max-width: 995px;
 }
 
-.card {
+.card-item {
   border: 1px solid #ddd;
   overflow: hidden;
   border-radius: 5px;
@@ -38,7 +38,7 @@
   justify-content: center;
 }
 
-.card-body-image-placeholder {
+.card-image-placeholder {
   background-color: lightgray;
   display: flex;
   align-items: center;
@@ -48,30 +48,21 @@
   margin: 10px;
 }
 
-.card-body-text {
+.card-text {
   padding: 10px;
 }
 
-.card-body-price {
+.card-price {
   text-align: right;
   padding: 10px;
   font-weight: bold;
 }
 
-.icon-size {
+/* Set the size for the mat-icon. You have to set all three parameters to make it work correctly */
+.card-image-placeholder mat-icon {
   font-size: 100px;
   height: 100px;
   width: 100px;
-}
-
-.error-container {
-  background-color: #ff6666;
-  color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 20px;
 }
 
 .product-list-container {
@@ -85,6 +76,7 @@
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .product-container {
@@ -134,8 +126,18 @@
 }
 
 /* Set the size for the mat-icon. You have to set all three parameters to make it work correctly */
-.mat-icon {
-  font-size: 30px;
-  width: 30px;
-  height: 30px;
+.product-image-placeholder mat-icon {
+  font-size: 100px;
+  height: 100px;
+  width: 100px;
+}
+
+.error-container {
+  background-color: #ff6666;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
 }
