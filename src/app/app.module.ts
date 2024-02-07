@@ -17,6 +17,7 @@ import { ChatbotMessageComponent } from './chatbot-message/chatbot-message.compo
 import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { TypingIndicatorComponent } from './typing-indicator/typing-indicator.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     QrCodeGeneratorComponent,
     StarRatingComponent,
     ProductDetailsComponent,
+    TypingIndicatorComponent,
   ],
   imports: [
     BrowserModule,

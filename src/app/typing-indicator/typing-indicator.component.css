@@ -1,0 +1,33 @@
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-indicator .dot-1,
+.typing-indicator .dot-2,
+.typing-indicator .dot-3 {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: hop 0.6s ease-in-out infinite;
+}
+
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.typing-indicator .dot-2 {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator .dot-3 {
+  animation-delay: 0.4s;
+}

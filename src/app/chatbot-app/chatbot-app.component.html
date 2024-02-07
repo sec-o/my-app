@@ -4,6 +4,7 @@
     <!-- the chats are generated in the chatbot-message component -->
     <chatbot-message [message]="message"></chatbot-message>
   </div>
+  <typing-indicator [chatbotIsTyping]="chatbotIsTyping"></typing-indicator>
   <div class="input-container">
     <input
       [(ngModel)]="userMessage"

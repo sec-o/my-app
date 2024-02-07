@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ChatbotAppComponent {
   messages: { text: string; fromUser: boolean; timestamp: Date }[] = [];
   userMessage: string = '';
+  chatbotIsTyping: boolean = false;
 
   constructor() {
     // Add a welcome message when the component is initialized
@@ -22,11 +23,21 @@ export class ChatbotAppComponent {
       // ...
 
       // For demonstration purposes, add a mock bot response
-      this.messages.push({
-        text: 'This is a mock response',
-        fromUser: false,
-        timestamp,
-      });
+
+      // Mock typing indicator for the chatbot
+      setTimeout(() => {
+        this.chatbotIsTyping = true;
+      }, 1000);
+
+      setTimeout(() => {
+        this.messages.push({
+          text: 'This is a mock response',
+          fromUser: false,
+          timestamp,
+        });
+        this.chatbotIsTyping = false;
+      }, 3000);
+
       this.userMessage = '';
     }
   }
