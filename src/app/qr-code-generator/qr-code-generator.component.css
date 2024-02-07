@@ -19,21 +19,43 @@
   margin-bottom: 16px;
 }
 
-.input-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.qrcode-image {
+  padding: 30px;
 }
 
-label {
-  font-size: 16px;
-  margin-right: 10px;
+.qrcode-placeholder .mat-icon {
+  font-size: 275px;
+  width: 275px;
+  height: 275px;
+  color: lightgray;
+}
+
+.input-url {
+  width: 250px;
+  height: 25px;
+}
+
+.hidden-input {
+  display: none;
 }
 
 input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
   padding: 5px;
   font-size: 14px;
   width: 200px;
+}
+
+.file-input-container {
+  padding: 5px;
+}
+
+.action-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 button {
@@ -44,7 +66,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
-  margin: 10px;
+  margin: 5px;
   height: 50px;
 }
 
@@ -57,28 +79,25 @@ button:disabled {
   cursor: default;
 }
 
-button.reset-button {
+mat-icon {
+  color: white;
+}
+
+.choose-file-button {
+  color: white;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.reset-button {
   background-color: #ff9800;
 }
 
-button.reset-button:hover {
+.reset-button:hover {
   background-color: #cb7a00;
 }
 
-button.reset-button:disabled {
+.reset-button:disabled {
   background-color: #ccc;
   cursor: default;
-}
-
-#qrcode {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  max-width: 300px;
-  overflow: hidden;
-}
-
-svg {
-  width: 100%;
-  height: auto;
 }

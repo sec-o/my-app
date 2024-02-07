@@ -1,16 +1,55 @@
 <div class="qrcode-container">
   <div class="banner-container">QR-Code Generator</div>
-  <div #qrcode style="padding-bottom: 20px"></div>
-  <label for="qrData">QR Code Data:</label>
-  <input id="qrData" [(ngModel)]="qrData" placeholder="Enter data" />
-  <div class="input-container">
-    <button (click)="generateQRCode()">Generate QR Code</button>
+  <div #qrcode class="qrcode-image" *ngIf="newQrCodeGenerated"></div>
+  <div class="qrcode-placeholder" *ngIf="!newQrCodeGenerated">
+    <mat-icon>qr_code_2</mat-icon>
+  </div>
+  <input
+    class="input-url"
+    [(ngModel)]="qrData"
+    [disabled]="newQrCodeGenerated"
+    placeholder="https://www.example.com"
+    (keyup.enter)="generateQRCode()"
+  />
+  <div class="file-input-container">
+    <input
+      #fileInput
+      type="file"
+      id="fileInput"
+      class="hidden-input"
+      (change)="onLogoFileChange($event)"
+      accept="image/*"
+    />
     <button
-      class="reset-button"
-      [disabled]="qrData === 'https://example.com'"
-      (click)="reset()"
+      mat-button
+      type="button"
+      [disabled]="fileAttached || !qrData || newQrCodeGenerated"
+      (click)="fileInput.click()"
     >
-      <mat-icon>restart_alt</mat-icon>
+      <mat-icon>image</mat-icon>
+      <div class="choose-file-button">Optional: Add a logo to your QR-Code</div>
+    </button>
+
+    <div *ngIf="fileAttached">File attached: {{ logoFile?.name }}</div>
+  </div>
+  <div class="action-buttons-container">
+    <div>
+      <button
+        [disabled]="!qrData || newQrCodeGenerated"
+        (click)="generateQRCode()"
+      >
+        Generate QR-Code
+      </button>
+      <button class="reset-button" [disabled]="!qrData" (click)="resetQRCode()">
+        <mat-icon>restart_alt</mat-icon>
+      </button>
+    </div>
+    <button
+      class="download-button"
+      [disabled]="!newQrCodeGenerated"
+      (click)="downloadQRCode()"
+    >
+      <mat-icon>download</mat-icon>
     </button>
   </div>
 </div>
