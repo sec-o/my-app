@@ -17,6 +17,8 @@ export class TodoAppComponent {
 
   newTodoText: string = '';
 
+  showCompletedTasksList: boolean = true;
+
   setTaskCompleted(todo: Todo) {
     todo.completed = true;
     this.completedTodos.push(todo);
@@ -31,6 +33,10 @@ export class TodoAppComponent {
 
   deleteTask(todo: Todo) {
     this.completedTodos = this.completedTodos.filter((item) => item !== todo);
+  }
+
+  toggleCompletedTasksList() {
+    this.showCompletedTasksList = !this.showCompletedTasksList;
   }
 
   addTask() {

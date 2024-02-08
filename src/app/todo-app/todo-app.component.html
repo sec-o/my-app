@@ -1,7 +1,7 @@
 <div class="todo-app-container">
   <div class="banner-container">Todo App</div>
   <div class="todo-list">
-    <h2>Tasks</h2>
+    <div class="tasks-title">Tasks</div>
     <div *ngIf="!todos.length" class="all-tasks-done">
       <span>All done! Enjoy your day!</span>
       <span><mat-icon>sunny</mat-icon></span>
@@ -14,16 +14,30 @@
     </div>
   </div>
   <div class="todo-list" *ngIf="completedTodos.length > 0">
-    <h2>Completed Tasks</h2>
-    <div *ngFor="let todo of completedTodos" class="todo-item">
-      <span
-        class="status-circle circle-completed"
-        (click)="setTaskUncompleted(todo)"
-      ></span>
-      <div class="todo-text text-completed">{{ todo.text }}</div>
-      <mat-icon class="delete-button" (click)="deleteTask(todo)"
-        >close</mat-icon
+    <div class="completed-tasks-title">
+      <div>Completed Tasks</div>
+      <mat-icon
+        *ngIf="!showCompletedTasksList"
+        (click)="toggleCompletedTasksList()"
+        >chevron_right</mat-icon
       >
+      <mat-icon
+        *ngIf="showCompletedTasksList"
+        (click)="toggleCompletedTasksList()"
+        >expand_more</mat-icon
+      >
+    </div>
+    <div *ngIf="showCompletedTasksList">
+      <div *ngFor="let todo of completedTodos" class="todo-item">
+        <span
+          class="status-circle circle-completed"
+          (click)="setTaskUncompleted(todo)"
+        ></span>
+        <div class="todo-text text-completed">{{ todo.text }}</div>
+        <mat-icon class="delete-button" (click)="deleteTask(todo)"
+          >close</mat-icon
+        >
+      </div>
     </div>
   </div>
   <div class="add-task">
