@@ -1,0 +1,33 @@
+<div class="todo-app-container">
+  <div class="banner-container">Todo App</div>
+  <div class="todo-list">
+    <h2>Tasks</h2>
+    <div *ngIf="!todos.length" class="all-tasks-done">
+      <span>All done! Enjoy your day!</span>
+      <span><mat-icon>sunny</mat-icon></span>
+    </div>
+    <div *ngFor="let todo of todos">
+      <div *ngIf="!todo.completed" class="todo-item">
+        <span class="status-circle" (click)="setTaskCompleted(todo)"></span>
+        <div class="todo-text">{{ todo.text }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="todo-list" *ngIf="completedTodos.length > 0">
+    <h2>Completed Tasks</h2>
+    <div *ngFor="let todo of completedTodos" class="todo-item">
+      <span
+        class="status-circle circle-completed"
+        (click)="setTaskUncompleted(todo)"
+      ></span>
+      <div class="todo-text text-completed">{{ todo.text }}</div>
+      <mat-icon class="delete-button" (click)="deleteTask(todo)"
+        >close</mat-icon
+      >
+    </div>
+  </div>
+  <div class="add-task">
+    <input type="text" placeholder="Enter task..." [(ngModel)]="newTodoText" />
+    <button [disabled]="!newTodoText" (click)="addTask()">Add Task</button>
+  </div>
+</div>

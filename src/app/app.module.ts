@@ -18,6 +18,7 @@ import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TypingIndicatorComponent } from './typing-indicator/typing-indicator.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { TypingIndicatorComponent } from './typing-indicator/typing-indicator.co
     StarRatingComponent,
     ProductDetailsComponent,
     TypingIndicatorComponent,
+    TodoAppComponent,
   ],
   imports: [
     BrowserModule,

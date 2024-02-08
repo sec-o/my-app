@@ -1,0 +1,159 @@
+.todo-app-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.banner-container {
+  background-color: orangered;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.all-tasks-done {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-style: italic;
+}
+
+.all-tasks-done mat-icon {
+  font-size: 100px;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  color: lightgray;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-right: 10px;
+  width: 80%;
+  word-wrap: break-word; /* For older browsers */
+  overflow-wrap: break-word; /* For newer browsers */
+}
+
+.text-completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.status-circle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  margin-right: 20px;
+}
+
+.status-circle:hover {
+  transform: scale(1.2); /* Scale up the circle on hover */
+}
+
+/* Add a black dot in the status circle while hovering */
+.status-circle::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.circle-completed {
+  background-color: green;
+  position: relative; /* Required for positioning the checkmark */
+}
+
+.circle-completed::before {
+  content: "\2713"; /* Unicode checkmark character */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px; /* Adjust size as needed */
+}
+
+.circle-completed:hover::before {
+  opacity: 0; /* Remove checkmark on hover */
+}
+
+.circle-completed:hover {
+  background-color: white;
+}
+
+.status-circle:hover::after {
+  opacity: 1; /* Show black dot on hover */
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.delete-button {
+  cursor: pointer;
+  color: darkred;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.add-task {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-task input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.add-task button {
+  width: 100px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-task button:hover {
+  background-color: #45a049;
+}
+
+.add-task button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
