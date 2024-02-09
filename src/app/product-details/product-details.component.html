@@ -54,7 +54,7 @@
             </mat-form-field>
           </div>
           <button
-            mat-raised-button
+            mat-flat-button
             color="primary"
             [disabled]="!product.quantity"
           >
@@ -64,4 +64,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="shopping-cart-container">
+  <a mat-stroked-button color="primary" routerLink="/shopping-cart/"
+    ><mat-icon>shopping_cart</mat-icon> Go to Shopping-Cart
+  </a>
 </div>

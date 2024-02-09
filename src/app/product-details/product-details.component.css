@@ -88,7 +88,6 @@
 }
 
 .cart-control {
-  width: 250px;
   border-left: 1px solid #ddd;
   margin-left: 40px;
   padding-left: 15px;
@@ -110,4 +109,16 @@
 button {
   width: 120px;
   font-size: 12px;
+}
+
+.shopping-cart-container {
+  margin: 0 auto; /* Center the content horizontally */
+  max-width: 995px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: lightyellow;
+  text-align: right;
 }

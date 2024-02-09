@@ -7,6 +7,7 @@ import { ChatbotAppComponent } from './chatbot-app/chatbot-app.component';
 import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'qr-code-generator-app', component: QrCodeGeneratorComponent },
   { path: 'todo-app', component: TodoAppComponent },
   { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
