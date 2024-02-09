@@ -6,7 +6,7 @@ export interface Product {
   fullDescription: string;
   price: number;
   condition: string;
-  inStock: boolean;
+  quantity: number;
   deliveryTime: number; // In days
 
   // Add other properties as needed

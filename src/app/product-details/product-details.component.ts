@@ -9,6 +9,8 @@ import { MockDataService } from '../mock-data.service';
 })
 export class ProductDetailsComponent {
   product: any;
+  quantityArray?: number[];
+  selectedQuantity?: number = 1;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,5 +24,9 @@ export class ProductDetailsComponent {
         this.product = product;
       });
     });
+
+    // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 5
+    const maxNumber = Math.min(this.product.quantity, 5);
+    this.quantityArray = Array.from({ length: maxNumber }, (_, i) => i + 1);
   }
 }

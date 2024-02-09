@@ -21,7 +21,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 1000,
       condition: 'new',
-      inStock: true,
+      quantity: 8,
       deliveryTime: 1,
     },
     {
@@ -33,7 +33,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 900,
       condition: 'new',
-      inStock: true,
+      quantity: 35,
       deliveryTime: 1,
     },
     {
@@ -45,7 +45,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 800,
       condition: 'new',
-      inStock: true,
+      quantity: 4,
       deliveryTime: 3,
     },
     {
@@ -57,7 +57,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 500,
       condition: 'new',
-      inStock: false,
+      quantity: 0,
       deliveryTime: 3,
     },
     {
@@ -69,7 +69,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 300,
       condition: 'new',
-      inStock: false,
+      quantity: 0,
       deliveryTime: 2,
     },
     {
@@ -81,7 +81,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 450,
       condition: 'new',
-      inStock: true,
+      quantity: 2,
       deliveryTime: 2,
     },
     // Add more products as needed

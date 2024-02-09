@@ -10,6 +10,7 @@ import { ProductFinderAppComponent } from './product-finder-app/product-finder-a
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatbotAppComponent } from './chatbot-app/chatbot-app.component';
@@ -39,6 +40,7 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
     FormsModule,
     BrowserAnimationsModule,
   ],

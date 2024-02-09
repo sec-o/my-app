@@ -27,10 +27,10 @@
           <div>
             <div class="product-condition-badge">{{ product.condition }}</div>
             <div class="product-price">{{ product.price + "$" }}</div>
-            <div *ngIf="product.inStock; else outOfStock">
+            <div *ngIf="product.quantity; else outOfStock">
               <div class="in-stock-badge">This product is in stock.</div>
             </div>
-            <div class="delivery-time" *ngIf="product.inStock">
+            <div class="delivery-time" *ngIf="product.quantity">
               Delivery within {{ product.deliveryTime }} day(s).
             </div>
             <ng-template #outOfStock
@@ -38,11 +38,25 @@
                 We're sorry, but this product is out of stock.
               </div></ng-template
             >
+            <mat-form-field>
+              <mat-label>Quantity</mat-label>
+              <mat-select
+                [(ngModel)]="selectedQuantity"
+                [disabled]="!product.quantity"
+              >
+                <mat-option
+                  *ngFor="let quantity of quantityArray"
+                  [value]="quantity"
+                >
+                  {{ quantity }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
           <button
             mat-raised-button
             color="primary"
-            [disabled]="!product.inStock"
+            [disabled]="!product.quantity"
           >
             Add to Cart
           </button>
