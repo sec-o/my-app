@@ -34,6 +34,15 @@ export class ShoppingCartService {
     this.productsSubject.next(this.cachedProducts);
   }
 
+  deleteFromCart(product: Product) {
+    if (this.cachedProducts.find((product1) => product1.id === product.id)) {
+      this.cachedProducts = this.cachedProducts.filter(
+        (product1) => product1.id !== product.id
+      );
+    }
+    this.productsSubject.next(this.cachedProducts);
+  }
+
   clearCart(): void {
     this.cachedProducts = [];
     this.productsSubject.next(this.cachedProducts);

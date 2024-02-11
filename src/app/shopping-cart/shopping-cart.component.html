@@ -1,6 +1,6 @@
 <div ngClass="container">
   <div class="header">Shopping-Cart</div>
-  <div class="flex">
+  <div class="flex" *ngIf="products.length">
     <table>
       <thead>
         <tr>
@@ -8,6 +8,7 @@
           <th></th>
           <th>Quantity</th>
           <th>Price</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +17,9 @@
           <td>{{ product.name }}</td>
           <td>{{ product.quantityInShoppingCart }}</td>
           <td>{{ product.price }}</td>
+          <td class="icon" (click)="deleteProduct(product)">
+            <mat-icon>close</mat-icon>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -26,5 +30,9 @@
       <div>Delivery within 1-2 day(s)</div>
       <button mat-flat-button color="primary">Checkout</button>
     </div>
+  </div>
+  <div *ngIf="!products.length" class="no-products">
+    <span>Your shopping-cart is empty...</span>
+    <span><mat-icon>shopping_basket</mat-icon></span>
   </div>
 </div>

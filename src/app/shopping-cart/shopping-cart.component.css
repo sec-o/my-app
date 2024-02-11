@@ -35,11 +35,38 @@ th {
 td {
   padding-top: 10px;
   padding-right: 50px;
+  vertical-align: top;
+}
+
+.icon {
+  text-align: right;
+  padding-right: 0px;
+  cursor: pointer;
+  color: darkred;
+}
+
+.icon:hover {
+  color: red;
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
+}
+
+.no-products {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-style: italic;
+}
+
+.no-products mat-icon {
+  font-size: 150px;
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  color: lightgray;
 }
 
 .cart-control {
