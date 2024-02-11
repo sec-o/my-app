@@ -11,11 +11,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let product of products">
           <td>Product Image</td>
-          <td>Product Description</td>
-          <td>Product Quantity</td>
-          <td>Product Price</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.quantityInShoppingCart }}</td>
+          <td>{{ product.price }}</td>
         </tr>
       </tbody>
     </table>
@@ -24,7 +24,7 @@
       <div>Payment Options</div>
       <div>Delivery Address</div>
       <div>Delivery within 1-2 day(s)</div>
-      <button mat-flat-button color="primary">Buy Now</button>
+      <button mat-flat-button color="primary">Checkout</button>
     </div>
   </div>
 </div>
