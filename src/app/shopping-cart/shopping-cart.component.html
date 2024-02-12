@@ -1,30 +1,43 @@
 <div ngClass="container">
   <div class="header">Shopping-Cart</div>
-  <div class="flex">
+  <div class="flex" *ngIf="products.length">
     <table>
       <thead>
         <tr>
-          <th>Products</th>
-          <th></th>
+          <th>Product(s)</th>
           <th>Quantity</th>
           <th>Price</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Product Image</td>
-          <td>Product Description</td>
-          <td>Product Quantity</td>
-          <td>Product Price</td>
+        <tr *ngFor="let product of products">
+          <td class="products">
+            <div class="product-details-image-placeholder">
+              <mat-icon class="icon-size">image</mat-icon>
+            </div>
+            {{ product?.name }}
+          </td>
+          <td>{{ product?.quantityInShoppingCart }}</td>
+          <td>
+            {{
+              (product?.price ?? 0) * (product?.quantityInShoppingCart ?? 1) +
+                "$"
+            }}
+          </td>
+          <td class="icon" (click)="deleteProduct(product)">
+            <mat-icon>close</mat-icon>
+          </td>
         </tr>
       </tbody>
     </table>
-    <div class="cart-control">
-      <div>Total Price</div>
-      <div>Payment Options</div>
-      <div>Delivery Address</div>
-      <div>Delivery within 1-2 day(s)</div>
-      <button mat-flat-button color="primary">Buy Now</button>
-    </div>
+  </div>
+  <div class="summary" *ngIf="products.length">
+    <div class="total-price">Total: {{ totalPrice + "$" }}</div>
+    <button mat-flat-button color="primary">Checkout</button>
+  </div>
+  <div *ngIf="!products.length" class="no-products">
+    <span>Your shopping-cart is empty...</span>
+    <span><mat-icon>shopping_basket</mat-icon></span>
   </div>
 </div>

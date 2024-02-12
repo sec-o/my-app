@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MockDataService } from '../mock-data.service';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { Product } from '../models/product.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-details',
@@ -10,11 +13,14 @@ import { MockDataService } from '../mock-data.service';
 export class ProductDetailsComponent {
   product: any;
   quantityArray?: number[];
-  selectedQuantity?: number = 1;
+  selectedQuantity: number = 1;
+  quantityOfProductsInShoppingCart: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private mockDataService: MockDataService
+    private mockDataService: MockDataService,
+    private shoppingCartService: ShoppingCartService,
+    private _notificationPopup: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -25,8 +31,22 @@ export class ProductDetailsComponent {
       });
     });
 
-    // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 5
-    const maxNumber = Math.min(this.product.quantity, 5);
+    // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 2
+    const maxNumber = Math.min(this.product.quantity, 2);
     this.quantityArray = Array.from({ length: maxNumber }, (_, i) => i + 1);
+  }
+
+  addtoShoppingCart(product: Product): void {
+    this.shoppingCartService.addToCart(product, this.selectedQuantity);
+    this.quantityOfProductsInShoppingCart =
+      this.shoppingCartService.getProducts().length;
+    this._notificationPopup.open(
+      product.name + ' added to your cart.',
+      'Close',
+      {
+        duration: 2000,
+        horizontalPosition: 'end',
+      }
+    );
   }
 }

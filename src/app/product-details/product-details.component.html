@@ -57,6 +57,7 @@
             mat-flat-button
             color="primary"
             [disabled]="!product.quantity"
+            (click)="addtoShoppingCart(product)"
           >
             Add to Cart
           </button>
@@ -67,6 +68,8 @@
 </div>
 <div class="shopping-cart-container">
   <a mat-stroked-button color="primary" routerLink="/shopping-cart/"
-    ><mat-icon>shopping_cart</mat-icon> Go to Shopping-Cart
+    ><mat-icon>shopping_cart</mat-icon> Go to Shopping-Cart ({{
+      quantityOfProductsInShoppingCart
+    }})
   </a>
 </div>

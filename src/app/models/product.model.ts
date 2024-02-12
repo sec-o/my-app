@@ -8,6 +8,7 @@ export interface Product {
   condition: string;
   quantity: number;
   deliveryTime: number; // In days
+  quantityInShoppingCart?: number;
 
   // Add other properties as needed
 }
