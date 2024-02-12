@@ -22,6 +22,11 @@
   justify-content: center;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 table {
   width: 100%;
 }
@@ -34,8 +39,22 @@ th {
 
 td {
   padding-top: 10px;
-  padding-right: 50px;
-  vertical-align: top;
+}
+
+.products {
+  display: flex;
+  align-items: center;
+}
+
+.product-details-image-placeholder {
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  width: 75px;
+  border-radius: 5px;
+  margin-right: 20px;
 }
 
 .icon {
@@ -47,11 +66,6 @@ td {
 
 .icon:hover {
   color: red;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-between;
 }
 
 .no-products {
@@ -69,12 +83,17 @@ td {
   color: lightgray;
 }
 
-.cart-control {
-  width: 250px;
-  border-left: 1px solid #ddd;
-  margin-left: 40px;
-  padding-left: 15px;
+.summary {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin: 15px 0px 15px 0px;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: large;
+  margin-right: 20px;
 }

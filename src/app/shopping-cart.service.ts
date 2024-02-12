@@ -24,12 +24,18 @@ export class ShoppingCartService {
       const productIndex = this.cachedProducts.findIndex(
         (product1) => product1.id === product.id
       );
-      // Update "quantityInShoppingCart" with +1 if product already in shopping cart
+      // Update "quantityInShoppingCart" with +1 if product already in shopping cart (limit of max. 2 per product)
       const quantity1 =
         this.cachedProducts[productIndex].quantityInShoppingCart;
       if (quantity1)
+        if (quantity1 === 0) {
+          this.cachedProducts[productIndex].quantityInShoppingCart =
+            quantity1 + quantity;
+        }
+      if (quantity1 === 1) {
         this.cachedProducts[productIndex].quantityInShoppingCart =
-          quantity1 + quantity;
+          quantity1 + 1;
+      }
     } else this.cachedProducts.push(product);
     this.productsSubject.next(this.cachedProducts);
   }

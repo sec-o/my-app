@@ -31,8 +31,8 @@ export class ProductDetailsComponent {
       });
     });
 
-    // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 5
-    const maxNumber = Math.min(this.product.quantity, 5);
+    // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 2
+    const maxNumber = Math.min(this.product.quantity, 2);
     this.quantityArray = Array.from({ length: maxNumber }, (_, i) => i + 1);
   }
 

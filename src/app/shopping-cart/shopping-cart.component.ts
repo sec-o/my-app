@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ShoppingCartComponent {
   products: Product[] = [];
-  productQuantityInCart?: number;
+  totalPrice: number = 0;
 
   constructor(
     private shoppingCartService: ShoppingCartService,
@@ -19,6 +19,11 @@ export class ShoppingCartComponent {
 
   ngOnInit(): void {
     this.products = this.shoppingCartService.getProducts();
+
+    // Calculate the total price of all products in the shopping cart
+    for (const product of this.products) {
+      this.totalPrice += product.price * (product.quantityInShoppingCart ?? 1);
+    }
   }
 
   deleteProduct(product: Product) {

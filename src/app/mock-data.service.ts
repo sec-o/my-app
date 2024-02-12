@@ -21,7 +21,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 1000,
       condition: 'new',
-      quantity: 8,
+      quantity: 1000,
       deliveryTime: 1,
     },
     {
@@ -33,7 +33,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 900,
       condition: 'new',
-      quantity: 35,
+      quantity: 1000,
       deliveryTime: 1,
     },
     {
@@ -45,7 +45,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 800,
       condition: 'new',
-      quantity: 4,
+      quantity: 1000,
       deliveryTime: 3,
     },
     {
@@ -81,7 +81,7 @@ export class MockDataService {
         'Brand new product. Comes with lots of extras and a stylish package. If necessary, add more product description here. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example. This is only an example.',
       price: 450,
       condition: 'new',
-      quantity: 2,
+      quantity: 1000,
       deliveryTime: 2,
     },
     // Add more products as needed
