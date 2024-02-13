@@ -1,0 +1,51 @@
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  font-weight: bold;
+  font-size: large;
+}
+
+.app-container {
+  width: 200px;
+  height: 150px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-container mat-icon {
+  font-size: 75px;
+  height: 75px;
+  width: 75px;
+  margin-top: auto;
+}
+
+.app-container p {
+  margin-top: auto;
+}
+
+.app-container:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}

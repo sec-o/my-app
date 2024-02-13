@@ -22,6 +22,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { TypingIndicatorComponent } from './typing-indicator/typing-indicator.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { AppSelectionComponent } from './app-selection/app-selection.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     TypingIndicatorComponent,
     TodoAppComponent,
     ShoppingCartComponent,
+    AppSelectionComponent,
   ],
   imports: [
     BrowserModule,
