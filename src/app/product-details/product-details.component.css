@@ -4,6 +4,7 @@
 }
 
 .product-details-item {
+  background-color: #fff;
   border: 1px solid #ddd;
   padding: 15px;
   margin: 10px;
@@ -34,11 +35,12 @@
 }
 
 .product-header {
-  background-color: purple;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--headline-color);
+  font-weight: bold;
   height: 35px;
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   padding-left: 10px;
   margin-right: 20px;
@@ -55,6 +57,7 @@
 
 .product-full-description {
   margin-top: 20px;
+  text-align: left;
 }
 
 .product-condition-badge {
@@ -89,6 +92,7 @@
 
 .cart-control {
   border-left: 1px solid #ddd;
+  text-align: left;
   margin-left: 40px;
   padding-left: 15px;
   display: flex;

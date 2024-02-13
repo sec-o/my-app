@@ -1,5 +1,7 @@
 <!-- Search field -->
 <div class="search-field-container">
+  <!-- div-placeholder to set the input exactly centered with flex/space-between -->
+  <div style="width: 48px"></div>
   <mat-form-field class="search-field">
     <mat-label>Search for your product...</mat-label>
     <input
@@ -27,17 +29,9 @@
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
-</div>
-
-<!-- TODO: just for testing, remove at the end -->
-<div class="search-field-container">
-  Input-Value: {{ customerProductSearchInput }}
-</div>
-
-<!-- Toggle view button between cards and list -->
-<div class="toggle-button-container">
-  <button class="toggle-button">
-    <mat-icon fontIcon="grid_view" (click)="toggleView()"></mat-icon>
+  <!-- Toggle view button between cards and list -->
+  <button mat-icon-button (click)="toggleView()">
+    <mat-icon>grid_view</mat-icon>
   </button>
 </div>
 
@@ -64,8 +58,11 @@
           ></app-star-rating>
           {{ product.description }}
         </div>
-        <div class="card-price">
-          {{ product.price + "$" }}
+        <div class="price-container">
+          <div class="product-condition-badge">{{ product.condition }}</div>
+          <div class="card-price">
+            {{ product.price + "$" }}
+          </div>
         </div>
       </div>
     </div>
@@ -89,8 +86,11 @@
           ></app-star-rating>
           {{ product.description }}
         </div>
-        <div class="card-price">
-          {{ product.price + "$" }}
+        <div class="price-container">
+          <div class="product-condition-badge">{{ product.condition }}</div>
+          <div class="card-price">
+            {{ product.price + "$" }}
+          </div>
         </div>
       </div>
     </div>
@@ -111,14 +111,19 @@
           <div class="product-image-placeholder">
             <mat-icon class="icon-size">image</mat-icon>
           </div>
-          <div>
+          <div class="product-description-container">
             <div class="product-header">{{ product.name }}</div>
             <app-star-rating
               [selectedStar]="product.rating"
               (ratingClicked)="onRatingClicked($event)"
             ></app-star-rating>
             <div class="product-description">{{ product.description }}</div>
-            <div class="product-price">{{ product.price + "$" }}</div>
+            <div class="price-container">
+              <div class="product-condition-badge">{{ product.condition }}</div>
+              <div class="card-price">
+                {{ product.price + "$" }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -134,14 +139,19 @@
           <div class="product-image-placeholder">
             <mat-icon class="icon-size">image</mat-icon>
           </div>
-          <div>
+          <div class="product-description-container">
             <div class="product-header">{{ product.name }}</div>
             <app-star-rating
               [selectedStar]="product.rating"
               (ratingClicked)="onRatingClicked($event)"
             ></app-star-rating>
             <div class="product-description">{{ product.description }}</div>
-            <div class="product-body-price">{{ product.price + "$" }}</div>
+            <div class="price-container">
+              <div class="product-condition-badge">{{ product.condition }}</div>
+              <div class="card-price">
+                {{ product.price + "$" }}
+              </div>
+            </div>
           </div>
         </div>
       </div>

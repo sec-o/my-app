@@ -1,4 +1,5 @@
 .container {
+  background-color: #fff;
   margin: 0 auto; /* Center the content horizontally */
   max-width: 995px;
   border: 1px solid #ddd;
@@ -9,7 +10,7 @@
 }
 
 .header {
-  background-color: purple;
+  background-color: var(--accent-color);
   color: white;
   height: 35px;
   font-size: 20px;

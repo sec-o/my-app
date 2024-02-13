@@ -53,4 +53,8 @@ export class ShoppingCartService {
     this.cachedProducts = [];
     this.productsSubject.next(this.cachedProducts);
   }
+
+  doesShoppingCartContainProducts(): any {
+    if (this.cachedProducts.length) return true;
+  }
 }

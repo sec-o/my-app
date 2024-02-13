@@ -4,8 +4,36 @@ body {
   max-width: 1000px;
   margin: 0 auto; /* Center the content horizontally */
   overflow-y: scroll; /* Force scrollbar always so it doesn't affect the width layout of the website when switching between sites with and without scrollbar */
+  background-color: lightgray;
 }
 
 .mat-icon {
   vertical-align: middle;
+}
+
+/* Global color styles */
+/* Option 1: Use colors in the css file (for example: background-color: var(--primary-color)) */
+:root {
+  --primary-color: #073b9a;
+  --primary-color-hover: #2261d7;
+  --secondary-color: #ecd5b2;
+  --accent-color: orange;
+  --accent-color-hover: #dc9511;
+}
+
+/* Option 2: Use colors directly in the div (for example: class="primary-color") */
+.primary-color {
+  background-color: #073b9a;
+}
+
+.secondary-color {
+  background-color: #ecd5b2;
+}
+
+.accent-color {
+  background-color: orange;
+}
+
+.accent-color-hover {
+  background-color: #dc9511;
 }
