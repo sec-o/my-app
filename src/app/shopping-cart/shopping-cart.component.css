@@ -11,9 +11,10 @@
 
 .header {
   background-color: var(--accent-color);
-  color: white;
+  color: var(--headline-color);
+  font-weight: bold;
   height: 35px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   padding: 0px 10px 0px 10px;
   margin-bottom: 20px;
