@@ -1,12 +1,22 @@
 .search-field-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: space-between; /* Center horizontally */
+  margin: auto;
+  width: 950px;
 }
-
 .search-field {
   width: 500px;
-  margin-left: 20px;
-  margin-right: 20px;
+}
+
+.search-field-container button {
+  margin-top: 5px;
+}
+
+.search-field-container mat-icon {
+  font-size: 25px;
+  height: 25px;
+  width: 25px;
+  display: flex;
 }
 
 .card-list-container {
@@ -15,10 +25,12 @@
 }
 
 .card-item {
+  background-color: #fff;
   border: 1px solid #ddd;
+  text-align: left;
   overflow: hidden;
   border-radius: 5px;
-  margin: 15px;
+  margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: inline-block; /* Add this line to make cards inline-block */
   width: 300px; /* Adjust the width as needed */
@@ -27,11 +39,11 @@
 }
 
 .card-header {
-  background-color: purple;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--headline-color);
   height: 35px;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
   /* Set text centered vertically */
   display: flex;
   align-items: center;
@@ -45,17 +57,34 @@
   justify-content: center;
   height: 150px;
   border-radius: 5px;
-  margin: 10px;
+  margin: 15px;
 }
 
 .card-text {
-  padding: 10px;
+  margin: 15px;
+}
+
+.price-container {
+  margin: 15px;
+  /* Set the price in the bottom-right corner */
+  text-align: right;
+  margin-top: auto;
 }
 
 .card-price {
-  text-align: right;
-  padding: 10px;
   font-weight: bold;
+  font-size: large;
+}
+
+.product-condition-badge {
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: green;
+  color: #fff;
+  font-size: 8px;
+  border-radius: 5px;
+  padding: 0px 8px;
+  margin-bottom: 5px;
 }
 
 /* Set the size for the mat-icon. You have to set all three parameters to make it work correctly */
@@ -67,11 +96,13 @@
 
 .product-list-container {
   margin: 0 auto; /* Center the content horizontally */
-  max-width: 995px;
+  max-width: 970px;
 }
 
 .product-list-item {
+  background-color: #fff;
   border: 1px solid #ddd;
+  text-align: left;
   padding: 15px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -94,11 +125,17 @@
   margin-right: 20px;
 }
 
+.product-description-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .product-header {
-  background-color: purple;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--headline-color);
   height: 35px;
-  font-size: 20px;
+  font-size: 16px;
   border-radius: 5px;
   padding-left: 10px;
   margin-bottom: 10px;
@@ -113,16 +150,7 @@
 
 .product-price {
   font-weight: bold;
-  font-size: x-large;
-}
-
-.toggle-button-container {
-  text-align: right;
-  padding-right: 20px;
-}
-
-.toggle-button {
-  cursor: pointer;
+  font-size: large;
 }
 
 /* Set the size for the mat-icon. You have to set all three parameters to make it work correctly */

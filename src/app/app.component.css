@@ -1,5 +1,5 @@
 .toolbar {
-  background-color: purple;
+  background-color: var(--primary-color);
   color: white;
   position: absolute;
   top: 0;
@@ -22,10 +22,6 @@ a {
 
 a:hover {
   background-color: black;
-}
-
-.toolbar-btn {
-  background-color: purple;
 }
 
 .toolbar-btn-active {

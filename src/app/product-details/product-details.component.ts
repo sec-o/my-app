@@ -15,6 +15,7 @@ export class ProductDetailsComponent {
   quantityArray?: number[];
   selectedQuantity: number = 1;
   quantityOfProductsInShoppingCart: number = 0;
+  doesShoppingCartContainItems?: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,10 @@ export class ProductDetailsComponent {
       this.mockDataService.getProductById(productId).subscribe((product) => {
         this.product = product;
       });
+      this.quantityOfProductsInShoppingCart =
+        this.shoppingCartService.getProducts().length;
+      this.doesShoppingCartContainItems =
+        this.shoppingCartService.doesShoppingCartContainProducts();
     });
 
     // Generate array of numbers based on product.quantity to use it in mat-select, limited to a maximum of 2
@@ -48,5 +53,6 @@ export class ProductDetailsComponent {
         horizontalPosition: 'end',
       }
     );
+    this.doesShoppingCartContainItems = true;
   }
 }

@@ -13,6 +13,14 @@
   </div>
   <div class="message-content">
     {{ message.text }}
-    <div class="timestamp">{{ message.timestamp | date : "HH:mm:ss" }}</div>
+    <div
+      class="timestamp"
+      [ngClass]="{
+        'user-message': message.fromUser,
+        'bot-message': !message.fromUser
+      }"
+    >
+      {{ message.timestamp | date : "HH:mm:ss" }}
+    </div>
   </div>
 </div>
