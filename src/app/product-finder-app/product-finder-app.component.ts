@@ -87,4 +87,9 @@ export class ProductFinderAppComponent {
     );
     return product.name.replace(/ /g, '_'); // Replace space with underscore
   }
+
+  // If customer is searching for a product, return this.foundProducts, else this.products
+  getProductList() {
+    return this.searchingForProduct ? this.foundProducts : this.products;
+  }
 }
