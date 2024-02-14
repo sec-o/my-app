@@ -37,7 +37,6 @@
 .product-header {
   background-color: var(--accent-color);
   color: var(--headline-color);
-  font-weight: bold;
   height: 35px;
   width: 100%;
   font-size: 16px;
@@ -52,7 +51,7 @@
 
 .product-price {
   font-weight: bold;
-  font-size: x-large;
+  font-size: large;
 }
 
 .product-full-description {

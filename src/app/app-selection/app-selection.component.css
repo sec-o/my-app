@@ -17,8 +17,7 @@
 }
 
 .header {
-  font-weight: bold;
-  font-size: large;
+  font-size: 16px;
 }
 
 .app-container {
@@ -30,7 +29,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: var(--accent-color);
-  font-weight: bold;
+  color: var(--headline-color);
   display: flex;
   flex-direction: column;
   align-items: center;

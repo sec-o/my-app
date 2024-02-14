@@ -16,9 +16,9 @@ body {
 :root {
   --primary-color: #073b9a;
   --primary-color-hover: #2261d7;
-  --secondary-color: #ecd5b2;
-  --accent-color: orange;
-  --accent-color-hover: #dc9511;
+  --accent-color: #ff8c00;
+  --accent-color-hover: orange;
+  --headline-color: white;
 }
 
 /* Option 2: Use colors directly in the div (for example: class="primary-color") */
@@ -26,14 +26,10 @@ body {
   background-color: #073b9a;
 }
 
-.secondary-color {
-  background-color: #ecd5b2;
-}
-
 .accent-color {
-  background-color: orange;
+  background-color: #ff8c00;
 }
 
 .accent-color-hover {
-  background-color: #dc9511;
+  background-color: orange;
 }

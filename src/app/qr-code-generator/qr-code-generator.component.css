@@ -12,7 +12,6 @@
 .banner-container {
   background-color: var(--accent-color);
   color: var(--headline-color);
-  font-weight: bold;
   padding: 10px;
   text-align: center;
   font-size: 16px;
