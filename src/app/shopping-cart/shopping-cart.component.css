@@ -100,3 +100,10 @@ td {
   font-size: large;
   margin-right: 20px;
 }
+
+@media only screen and (max-width: 480px) {
+  .product-details-image-placeholder {
+    max-width: 50px;
+    max-height: 50px;
+  }
+}

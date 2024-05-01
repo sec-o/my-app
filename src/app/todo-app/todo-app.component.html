@@ -41,7 +41,12 @@
     </div>
   </div>
   <div class="add-task">
-    <input type="text" placeholder="Enter task..." [(ngModel)]="newTodoText" />
+    <input
+      type="text"
+      placeholder="Enter task..."
+      [(ngModel)]="newTodoText"
+      (keyup.enter)="addTask()"
+    />
     <button [disabled]="!newTodoText" (click)="addTask()">Add Task</button>
   </div>
 </div>

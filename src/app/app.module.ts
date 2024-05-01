@@ -7,9 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { ProductFinderAppComponent } from './product-finder-app/product-finder-app.component';
 
 // imported by me
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
@@ -42,9 +43,10 @@ import { AppSelectionComponent } from './app-selection/app-selection.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatIconModule,
-    MatInputModule,
     MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
     FormsModule,
