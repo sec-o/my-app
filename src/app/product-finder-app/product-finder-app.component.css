@@ -19,6 +19,12 @@
   display: flex;
 }
 
+@media only screen and (max-width: 480px) {
+  .search-field-container {
+    display: none;
+  }
+}
+
 .card-list-container {
   margin: 0 auto; /* Center the content horizontally */
   max-width: 995px;

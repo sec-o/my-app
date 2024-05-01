@@ -5,6 +5,14 @@ body {
   margin: 0 auto; /* Center the content horizontally */
   overflow-y: scroll; /* Force scrollbar always so it doesn't affect the width layout of the website when switching between sites with and without scrollbar */
   background-color: lightgray;
+  padding-bottom: 20px;
+}
+
+/* styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 0 10px 15px 10px;
+  }
 }
 
 .mat-icon {

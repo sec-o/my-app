@@ -6,12 +6,15 @@
   left: 0;
   right: 0;
   height: 65px;
-
   /* center text horizontally and vertically */
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-width: 750px;
+}
+
+.toolbar-mobile {
+  display: none;
 }
 
 a {
@@ -20,8 +23,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  background-color: black;
+/* styles for desktop devices */
+@media only screen and (min-width: 481px) {
+  a:hover {
+    background-color: black;
+  }
 }
 
 .toolbar-btn-active {
@@ -31,4 +37,27 @@ a:hover {
 .main {
   margin-top: 85px;
   text-align: center;
+}
+
+/* styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  .toolbar-desktop {
+    display: none;
+  }
+  .toolbar-mobile {
+    display: flex;
+    align-items: center;
+  }
+  .toolbar {
+    justify-content: right;
+    padding-right: 20px;
+    min-width: 0px;
+  }
+  a {
+    padding: 0px;
+    margin-top: 5px;
+  }
+  ::ng-deep .mat-menu {
+    background-color: #073b9a;
+  }
 }
