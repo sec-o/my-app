@@ -1,11 +1,14 @@
 <html>
   <head>
     <script type="text/javascript">
-      // Capture the current path
-      var pathname = window.location.pathname;
+      // Check if the current page is '404.html' to avoid infinite loops
+      if (window.location.pathname !== "/index.html") {
+        // Capture the current path
+        var pathname = window.location.pathname;
 
-      // Redirect to index.html and retain the original path in the hash
-      window.location.href = pathname;
+        // Redirect to index.html and retain the original path in the hash
+        window.location.href = "/" + pathname;
+      }
     </script>
   </head>
   <body>
