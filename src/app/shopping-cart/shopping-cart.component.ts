@@ -36,6 +36,7 @@ export class ShoppingCartComponent {
         horizontalPosition: 'end',
       }
     );
+    this.totalPrice -= product.price * (product.quantityInShoppingCart ?? 1);
     this.products = this.shoppingCartService.getProducts();
   }
 }
