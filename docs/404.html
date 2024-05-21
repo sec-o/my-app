@@ -1,17 +1,10 @@
 <html>
   <head>
-    <script type="text/javascript">
-      // Check if the current page is '404.html' to avoid infinite loops
-      if (window.location.pathname !== "/index.html") {
-        // Capture the current path
-        var pathname = window.location.pathname;
-
-        // Redirect to index.html and retain the original path in the hash
-        window.location.href = pathname;
-      }
+    <meta http-equiv="refresh" content="0; url=/index.html" />
+    <script>
+      // This script is for browsers that don't support the meta refresh tag
+      window.location.href = "/docs/index.html";
     </script>
   </head>
-  <body>
-    Redirecting...
-  </body>
+  <body></body>
 </html>
