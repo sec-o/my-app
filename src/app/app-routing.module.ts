@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProductFinderAppComponent } from './product-finder-app/product-finder-app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -27,4 +27,11 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  constructor(router: Router) {
+    const hashPath = window.location.hash.substr(1);
+    if (hashPath) {
+      router.navigateByUrl(hashPath);
+    }
+  }
+}
