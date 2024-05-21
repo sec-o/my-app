@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=./index.html" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      // JavaScript to preserve the path and query parameters
+      var path = window.location.pathname;
+      var search = window.location.search;
+      window.location.replace(
+        "/index.html?redirect=" + encodeURIComponent(path + search)
+      );
+    </script>
+  </body>
+</html>
