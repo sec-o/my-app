@@ -24,6 +24,7 @@ import { TypingIndicatorComponent } from './typing-indicator/typing-indicator.co
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AppSelectionComponent } from './app-selection/app-selection.component';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AppSelectionComponent } from './app-selection/app-selection.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
