@@ -14,7 +14,7 @@ export class MockDataService {
   private products: Product[] = [
     {
       id: 1000,
-      name: 'Apple iPhone 18',
+      name: 'Smartphone Glass C18',
       rating: 5,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
@@ -26,7 +26,7 @@ export class MockDataService {
     },
     {
       id: 1001,
-      name: 'Samsung Galaxy S35',
+      name: 'Smartphone Universe L35',
       rating: 4,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
@@ -38,7 +38,7 @@ export class MockDataService {
     },
     {
       id: 1002,
-      name: 'Sony Xperia 9',
+      name: 'Smartphone Ocean XYZ9',
       rating: 3.5,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
@@ -50,7 +50,7 @@ export class MockDataService {
     },
     {
       id: 1003,
-      name: 'LG G 16',
+      name: 'Smartphone Earth 16',
       rating: 3,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
@@ -62,7 +62,7 @@ export class MockDataService {
     },
     {
       id: 1004,
-      name: 'Nokia 14',
+      name: 'Smartphone Wind ABC14',
       rating: 3,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
@@ -74,7 +74,7 @@ export class MockDataService {
     },
     {
       id: 1005,
-      name: 'Motorola Razr',
+      name: 'Smartphone Water 54',
       rating: 4,
       description: 'Put your product description here. This is just a sample.',
       fullDescription:
